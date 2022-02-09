@@ -1,7 +1,6 @@
 package com.codebrain.backendchallenge.resources;
 
 import com.codebrain.backendchallenge.domain.LojaDeProdutos;
-import com.codebrain.backendchallenge.repositories.LojaDeProdutosRepository;
 import com.codebrain.backendchallenge.service.LojaDeProdutosService;
 
 import org.springframework.beans.factory.annotation.Autowired;
