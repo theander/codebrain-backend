@@ -18,6 +18,7 @@ public class Produto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
+    private String image;
     private Double preco;
 
     
