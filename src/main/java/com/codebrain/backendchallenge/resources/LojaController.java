@@ -17,9 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins="https://codebrain-backend.herokuapp.com",maxAge = 3600)
+
 @RestController
 @RequestMapping(value = "/api")
+@CrossOrigin(origins={"http://localhost:3000","https://codebrain-frontend.herokuapp.com"})
 public class LojaController {
 
     @Autowired
@@ -32,7 +33,7 @@ public class LojaController {
     public Produto saveNewProduct(@RequestBody Produto p) {
         return produtoService.saveProduto(p);
     }
-
+    @CrossOrigin
     @GetMapping("/produtos")
     @ResponseStatus(HttpStatus.OK)
     public List<Produto> getProductsStore() {
