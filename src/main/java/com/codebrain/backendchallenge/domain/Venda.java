@@ -25,4 +25,7 @@ public class Venda {
     @JoinColumn(name="id_list")
     private List<Produto> listaVenda = new ArrayList<>();
 
+    private Double valorTotal;
+    private Integer quantidadeTotal;
+
 }

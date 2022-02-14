@@ -6,7 +6,6 @@ import com.codebrain.backendchallenge.domain.Produto;
 import com.codebrain.backendchallenge.domain.Venda;
 import com.codebrain.backendchallenge.service.ProdutoService;
 import com.codebrain.backendchallenge.service.VendaService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -27,10 +26,11 @@ public class LojaController {
     private ProdutoService produtoService;
     @Autowired
     private VendaService vendaService;
-
+    @CrossOrigin
     @PostMapping("/novo-produto")
     @ResponseStatus(HttpStatus.CREATED)
     public Produto saveNewProduct(@RequestBody Produto p) {
+
         return produtoService.saveProduto(p);
     }
     @CrossOrigin
@@ -39,13 +39,13 @@ public class LojaController {
     public List<Produto> getProductsStore() {
         return produtoService.getProdutos();
     }
-
+    @CrossOrigin
     @PostMapping("/nova-venda")
     @ResponseStatus(HttpStatus.CREATED)
     public Venda saveNewSale(@RequestBody Venda venda) {
         return vendaService.saveVenda(venda);
     }
-
+    @CrossOrigin
     @GetMapping("/vendas")
     @ResponseStatus(HttpStatus.OK)
     public List<Venda> getAllSales() {
