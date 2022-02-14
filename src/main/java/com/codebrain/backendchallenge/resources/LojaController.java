@@ -26,6 +26,7 @@ public class LojaController {
     private ProdutoService produtoService;
     @Autowired
     private VendaService vendaService;
+    
     @CrossOrigin
     @PostMapping("/novo-produto")
     @ResponseStatus(HttpStatus.CREATED)
